@@ -178,9 +178,18 @@
 	//php数组排序
 	echo "php数组排序<br>";
 	sort($cars);
+	echo "升序排列:";
+	var_dump($cars);
+	echo "<br>";
+	echo "降序排列:";
+	rsort($cars);
 	var_dump($cars);
 	echo "<br>";
 
+	//php超级全局变量
+	echo "php超级全局变量<br>";
+	addition();
+	echo $z;
 ?>
 
 <?php
@@ -189,5 +198,9 @@
 	}
 	function sum ($a, $b){
 		return $a+$b;
+	}
+
+	function addition(){
+		$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
 	}
 ?>
