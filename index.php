@@ -171,7 +171,8 @@
 	}
 	echo "php关联数组<br>";
 	$age = array("Peter" => "35", "Ben" => "37", "Joe" => "43");
-	echo $age."<br>";
+	var_dump($age);
+	echo "<br>";
 	echo "php多维数组<br>";
 	echo "<br>";
 
@@ -190,7 +191,37 @@
 	echo "php超级全局变量<br>";
 	addition();
 	echo $z;
+	echo "<br>SERVER<br>";
+	echo "PHP_SELF: ".$_SERVER['PHP_SELF']."<br>";
+	echo "SERVER_NAME: ".$_SERVER['SERVER_NAME']."<BR>";
+	echo "HTTP_HOST: ".$_SERVER['HTTP_HOST']."<br>";
+	echo "HTTP_REFERER: ".$_SERVER['HTTP_REFERER']."<BR>";
+	echo "HTTP_USER_AGENT: ".$_SERVER['HTTP_USER_AGENT']."<BR>";
+	echo "SCRIPT_NAME: ".$_SERVER['SCRIPT_NAME']."<BR>";
+	echo "SCRIPT_URI: ".$_SERVER['SCRIPT_URI']."<BR>";
+	echo "SERVER_PORT: ".$_SERVER['SERVER_PORT']."<BR>";
+	echo "SERVER_ADDR: ".$_SERVER['SERVER_ADDR']."<br>";
+
+	echo "REQUEST<br>";
+	$name = $_REQUEST['fname'];
+	echo "POST<br>";
+	echo "$name"."<br>";
+	$name1 = $_POST['fname'];
+	echo "$name1"."<br>";
+	echo "Study " . $_GET['subject'] . " at " . $_GET['web'];
+
 ?>
+<html>
+	<body>
+		<form method="post">
+			Name:<input type="text" name="fname">
+			<input type="submit">
+			<br>
+			<a href="index.php?subject=PHP&web=W3school.com.cn">测试GET</a><br>
+			<a href="html表单.php">html表单</a>
+		</form>
+	</body>
+</html>
 
 <?php
 	function writeMsg($msg1="msg1", $msg2="msg2"){
@@ -201,6 +232,7 @@
 	}
 
 	function addition(){
+		echo "GLOBALS超级全局变量<br>";
 		$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
 	}
 ?>
