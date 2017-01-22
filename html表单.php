@@ -56,13 +56,17 @@
 			}
 		?>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-			Name: <input type="text" name = "name"><span class = "error">*<?php echo $nameErr;?></span><br>
-			E-mail: <input type="text" name = "email"><span class = "error">*<?php echo $emailErr;?></span><br>
-			Website: <input type="text" name = "website"><span class = "error"><?php echo $websiteErr;?></span><br>
-			Comment: <textarea name = "comment" rows = "5" cols = "40"></textarea><span class = "error"><?php echo $commentErr;?></span><br>
+			Name: <input type="text" name = "name" value="<?php echo $name;?>"><span class = "error">*<?php echo $nameErr;?></span><br>
+			E-mail: <input type="text" name = "email" value = "<?php echo $email;?>"><span class = "error">*<?php echo $emailErr;?></span><br>
+			Website: <input type="text" name = "website" value="<?php echo $website;?>"><span class = "error"><?php echo $websiteErr;?></span><br>
+			Comment: <textarea name = "comment" rows = "5" cols = "40"><?php echo $comment;?></textarea><span class = "error"><?php echo $commentErr;?></span><br>
 
-			<input type = "radio" name = "gender" value = "famale"> Female<br>
-			<input type = "radio" name = "gender" value = "male">Male<span class = "error">*<?php echo $genderErr;?></span><br>
+			<input type = "radio" name = "gender" value = "famale" <?php if (isset($gender) && $gender == "famale") {
+				echo "checked"; 
+			}?>> Female<br>
+			<input type = "radio" name = "gender" value = "male" <?php if (isset($gender) && $gender == "male") {
+				echo "checked";
+			}?>>Male<span class = "error">*<?php echo $genderErr;?></span><br>
 			<input type="submit">
 		</form>
 		
