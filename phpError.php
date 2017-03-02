@@ -11,10 +11,23 @@
 
 	set_error_handler("customError");
 
+	function excep($number){
+		if ($number > 1) {
+			throw new Exception("Error Processing Request", 1);
+			
+		}
+		return true;
+	}
+
 	$test = 2;
 	if ($test > 1) {
 		trigger_error("value must be 1 or low");
 		echo "<br>";
+	}
+	try{
+		excep(2);
+	} catch(Exception $e){
+		echo "Message: " . $e->getMessage();
 	}
 	echo ($test);
 ?>
