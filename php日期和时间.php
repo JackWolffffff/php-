@@ -18,4 +18,11 @@
 	echo "<br>next Monday: " . date("Y-m-d h:i:sa", $d4);
 	$d5 = strtotime("+3 Months");
 	echo "<br>" . date("Y-m-d h:i:sa", $d5);
+	echo "<br>星期六<br>";
+	$startdate = strtotime("Saturday");
+	$enddate = strtotime("+6 weeks", $startdate);
+	while ($startdate < $enddate) {
+		echo date("M d", $startdate) . "<br>";
+		$startdate = strtotime("+1 week", $startdate);
+	}
 ?>

@@ -219,6 +219,7 @@
 			<br>
 			<a href="index.php?subject=PHP&web=W3school.com.cn">测试GET</a><br>
 			<a href="html表单.php">html表单</a>
+			<a href="php Include文件.php">PHP Include文件</a>
 		</form>
 	</body>
 </html>
